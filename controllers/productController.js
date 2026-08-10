@@ -41,16 +41,11 @@ const productController = {
 
     searchProducts: async (req, res) => {
         const {search} = req.query
-        console.log('search query', search);
         
         try {
             const searchResults = await instance.get(`https://dummyjson.com/products/search?q=${search}`)
-            console.log('search results', searchResults.data);
-            
             res.status(200).send({'message':'Search Results','status':'success','data':searchResults.data})
-        } catch (error) {
-            console.log('error', error);
-            
+        } catch (error) {            
             res.status(401).send({'message':'Error','status':'failed','error':error}) 
         }
     }
