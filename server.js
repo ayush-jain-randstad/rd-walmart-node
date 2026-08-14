@@ -1,6 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv';
-dotenv.config('');
+dotenv.config();
 import productRoutes from './routes/productRoutes.js'
 import authRoutes from './routes/authRoutes.js'
 import cors from "cors"
@@ -16,5 +16,5 @@ app.use("/api/product", productRoutes);
 app.use("/api/auth", authRoutes);
 
 app.listen(port, () => {
-    console.log(`server listening at http:localhost:${port}`);
+    console.log(`server listening at http://localhost:${port}`);
 })
